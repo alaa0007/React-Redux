@@ -5,7 +5,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 const initialState = {
-    isCartVisible: false
+    isCartVisible: false,
+    notifications : null
 }
 
 const uiSlice = createSlice({
@@ -20,6 +21,21 @@ const uiSlice = createSlice({
         */
         toggle(state) {
             state.isCartVisible = !state.isCartVisible
+        },
+
+        /**
+         * Updates the state with the given notifications.
+         *
+         * @param {type} state - the state object
+         * @param {type} action - the action object
+         * @return {type} undefined
+        */
+        showNotification(state, action){
+            state.notifications = {
+                status: action.payload.status,
+                title: action.payload.title,
+                message: action.payload.message
+            }
         }
     }
 })

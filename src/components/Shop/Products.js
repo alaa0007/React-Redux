@@ -24,6 +24,7 @@ const products = [
  * @return {JSX.Element} the products section component
  */
 const Products = (props) => {
+  
   /* RENDER */
   return (
     <section className={classes.products}>
